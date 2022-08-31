@@ -15,12 +15,12 @@ r0 = np.array([0.0,0.0])    # origo
 q0 = 1.0                    # ladning
 L = 5                       # lengde fra origo
 N = 21                      # antall punkter mellom lengdene fra origo
-x = np.linspace(-L,L,N)     # x-aksen: [-5, -4.5, 4,..., 0,..., 4, 4.5, 5]
-y = np.linspace(-L,L,N)     # y-aksen: [-5, -4.5, 4,..., 0,..., 4, 4.5, 5]
+x = np.linspace(-L,L,N)     # x-aksen (når N=21): [-5, -4.5, 4,..., 0,..., 4, 4.5, 5]
+y = np.linspace(-L,L,N)     # y-aksen (når N=21): [-5, -4.5, 4,..., 0,..., 4, 4.5, 5]
 rx,ry = np.meshgrid(x,y)    # lager et 2D koordinatsystem (matrise) med x og y
 Ex = np.zeros((N,N),float)  # lager en tom matrise for x-verdiene til E-feltet
 Ey = np.zeros((N,N),float)  # lager en tom matrise for y-veridene til E-feltet
-# rx.flat -> [-5.0, -4.5,..., 0.0,..., 4.5, 5.0, -5.0, -4.5,..., 0.0,..., 4.5, 5.0, -5.0, ...]
+# rx.flat (når N=21) -> [-5.0, -4.5,..., 0.0,..., 4.5, 5.0, -5.0, -4.5,..., 0.0,..., 4.5, 5.0, -5.0, ...]
 # rx.flat legger altså alle elementene i matrisen etter hverandre i en liste
 # på denne måten går man igjennom alle punktene i koordinatsystemet rx,ry
 for i in range(len(rx.flat)):
