@@ -17,14 +17,16 @@ N = 21
 x = np.linspace(-L, L, N)
 y = np.linspace(-L, L, N)
 rx, ry = np.meshgrid(x, y)
+print(rx)
 Ex = np.zeros((N, N), float)
+print(Ex)
 Ey = np.zeros((N, N), float)
 
 for i in range(len(rx.flat)):
     r = np.array([rx.flat[i], ry.flat[i]])
     Ex.flat[i],Ey.flat[i] = efield(q0, r0, r)
-
-#plt.quiver(rx, ry, Ex, Ey)
-plt.streamplot(rx, ry, Ex, Ey)
+print(Ex)
+plt.quiver(rx, ry, Ex, Ey)
+#plt.streamplot(rx, ry, Ex, Ey)
 plt.axis('equal')
 plt.show()

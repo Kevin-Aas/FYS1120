@@ -10,9 +10,14 @@ import matplotlib.pyplot as plt
 rho_A = 1
 epsilon0 = 8.854187817e-12
 a = 1
-z = np.linspace(0, 20, 100)
+z = np.linspace(0, 10, 1000)
 
-E = rho_A*z/(2*epsilon0) * (1/z - 1/(z**2 + a**2)**(1/2))
+u = np.linspace(0,10,1000)
+Eu = (1-u/(u**2 + 1)**1.5)
+plt.plot(u,Eu)
+plt.show()
+
+E = (1/z - 1/(z**2 + a**2)**(1/2))
 
 plt.plot(z, E)
 plt.xlabel("z")
