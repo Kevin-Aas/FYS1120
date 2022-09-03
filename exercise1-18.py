@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-L = 8
-N = 26
-a = 3
+L = 10
+N = 50
+a = 5
 x = np.linspace(-L, L, N)
 y = np.linspace(-L, L, N)
 rx, ry = np.meshgrid(x, y)
@@ -16,7 +16,10 @@ for i in range(len(rx.flat)):
     Ex.flat[i] = 0
     Ey.flat[i] = a/(yi*(yi-a))
 
-plt.quiver(rx, ry, Ex, Ey)
+plt.streamplot(rx, ry, Ex, Ey)
+plt.title("Streamplot av E(x,y)")
+plt.xlabel("[x]")
+plt.ylabel("[y]", rotation=0)
 plt.axhline(0,color='blue') # x = 0
 plt.axhline(a,color='red') # y = 0
 plt.show()
@@ -38,6 +41,7 @@ for i in range(len(rx.flat)):
     Ey.flat[i] = 1/yi
 
 plt.quiver(rx, ry, Ex, Ey)
+plt.title("Pilplot av E(x,y)")
 plt.xlabel("[x]")
 plt.ylabel("[y]", rotation=0)
 plt.axhline(0,color='red') # x = 0
