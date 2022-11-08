@@ -1,12 +1,14 @@
 import sympy as sy
+
 r = sy.Symbol('r')
 a = sy.Symbol('a')
 z = sy.Symbol('z')
 f = r/(r**2 + z**2)**(3/2)
 print(sy.integrate(f, (r,0,a)))
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 rho_A = 1
 epsilon0 = 8.854187817e-12
 a = 1
